@@ -6,6 +6,8 @@ mod bluetooth;
 mod bluetooth_applet;
 mod brightness;
 mod caffeine;
+mod clipboard;
+mod clipboard_applet;
 mod clock;
 mod config;
 mod configapp;

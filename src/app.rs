@@ -7,6 +7,7 @@ use gtk4::{glib, Orientation};
 
 use crate::battery_applet;
 use crate::bluetooth_applet;
+use crate::clipboard_applet;
 use crate::clock;
 use crate::config::{Config, PanelItem, ThemePreference};
 use crate::desktop::DesktopEntryStore;
@@ -159,6 +160,11 @@ pub fn build_ui(app: &gtk4::Application) {
                         config.xkb_layouts.clone(),
                         layout_cmd_tx,
                     ) {
+                        section_box.append(&widget);
+                    }
+                }
+                PanelItem::Clipboard => {
+                    if let Some(widget) = clipboard_applet::build(app, content.upcast_ref()) {
                         section_box.append(&widget);
                     }
                 }

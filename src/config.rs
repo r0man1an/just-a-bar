@@ -66,12 +66,13 @@ pub enum PanelItem {
     Battery,
     Screen,
     Keyboard,
+    Clipboard,
     Notifications,
     Power,
 }
 
 impl PanelItem {
-    pub const ALL: [PanelItem; 12] = [
+    pub const ALL: [PanelItem; 13] = [
         PanelItem::Workspaces,
         PanelItem::WindowTitle,
         PanelItem::Clock,
@@ -82,6 +83,7 @@ impl PanelItem {
         PanelItem::Battery,
         PanelItem::Screen,
         PanelItem::Keyboard,
+        PanelItem::Clipboard,
         PanelItem::Notifications,
         PanelItem::Power,
     ];
@@ -98,6 +100,7 @@ impl PanelItem {
             PanelItem::Battery => "Battery",
             PanelItem::Screen => "Screen",
             PanelItem::Keyboard => "Keyboard",
+            PanelItem::Clipboard => "Clipboard history",
             PanelItem::Notifications => "Notifications",
             PanelItem::Power => "Power",
         }
