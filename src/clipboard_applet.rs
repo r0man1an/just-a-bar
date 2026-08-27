@@ -216,7 +216,9 @@ fn refresh_list(state: &Rc<RefCell<AppletState>>) {
             let text = text.clone();
             move |_| {
                 clipboard::copy(&text);
-                state.borrow().popover_window.set_visible(false);
+                let popover_window = state.borrow().popover_window.clone();
+                popover_window.set_visible(false);
+                state.borrow_mut().popover_just_dismissed = false;
             }
         });
 
